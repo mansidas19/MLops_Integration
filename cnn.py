@@ -14,8 +14,10 @@ test_X = test_X / 255
 train_Y_one_hot = to_categorical(train_Y)
 test_Y_one_hot = to_categorical(test_Y)
 model = Sequential()
-model.add(Conv2D(64, (3,3),activation='relu', input_shape=(28, 28, 1)))
-model.add(MaxPooling2D(pool_size=(2,2)))
+i=n
+for i in range(i):
+  model.add(Conv2D(64, (3,3),activation='relu', input_shape=(28, 28, 1)))
+  model.add(MaxPooling2D(pool_size=(2,2)))
 model.add(Flatten())
 model.add(Dense(64,activation='relu'))
 model.add(Dense(10,activation='softmax'))
@@ -26,3 +28,4 @@ print('Test accuracy', test_acc*100)
 f=open("accu.txt","w")
 f.write("%5.2f"%(test_acc*100))
 f.close()
+n=n+1
